@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="arrow-back" color="warning"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>QRlector</ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+		<ion-input type="text" placeholder="Enter data for the QR Code" [(ngModel)]="qrData"></ion-input>
+  </ion-item>
+  
+
+  <ion-button (click)="scanQr()" expand="block" >scanner <ion-icon name="qr-scanner"></ion-icon> </ion-button>
+  <ion-button (click)="createQr()" expand="block" >create scanner <ion-icon name="qr-scanner"></ion-icon> </ion-button>
+
+  <ion-card *ngIf="createdCode">
+		<ion-card-content>
+			<p>Value: {{createdCode}}</p>
+		</ion-card-content>
+	</ion-card>
+</ion-content>
+
+<ion-footer  [translucent]="true" style="text-align: -webkit-center; ">
+  <ion-toolbar>
+    <ion-buttons  style="width:75%;     place-content: center;
+    border-bottom: solid;" >
+      <ion-button href="home" style="width:30%"><ion-icon name="home" style="zoom:1.6"></ion-icon></ion-button>
+      <ion-button href="lista" style="width:30%"><ion-icon name="search" large></ion-icon></ion-button>
+      <ion-button href="scanner" style="width:30%"><ion-icon name="scan-circle" style="zoom:1.6"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

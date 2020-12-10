@@ -1,0 +1,124 @@
+ion-content{
+  background-color: aqua;
+}
+
+#map{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+.card-background-page {
+
+  ion-item {
+    position: relative;
+    text-align: center;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+  }
+
+}
+.tabbar {
+  justify-content: center;
+}
+
+.tab-button {
+  max-width: 200px;
+}
+
+::ng-deep ion-icon.icon-button {
+  background: var(--ion-color-primary-tint)!important;
+  color: white;
+  border-radius: 50%!important;
+}
+
+:host ::ng-deep .tabs-inner {
+  position: unset!important;
+  contain: size style!important;
+}
+
+.bottom-tab-bar {
+  --background: transparent;
+  --border: 0;
+}
+
+ion-tab-button {
+  --background: rgb(88 51 51);
+}
+
+.button-center {
+  --background: transparent!important;
+  ion-icon {
+    height: 50px;
+    width: 50px;
+    font-size: 75px;
+  }
+}
+
+ion-tab-bar {
+  &:before {
+    box-shadow: 0 387px 0 300px #151515;
+    position: absolute;
+    margin-top: -48px;
+    padding: 56px;
+    border-radius: 65%;
+    content: '';
+  }
+}
+
+.inner-left-btn {
+  border-radius: 0 54% 0 0; // create the curved style on the left side of the center
+}
+
+.inner-right-btn {
+  border-radius: 54% 0 0 0; // create the curved style on the right side of the center
+}
+
+.inner-center-btn {
+  position: absolute;
+  left: calc(50% - 28px); // position your button in the center
+  bottom: 20px; // position your button slightly above the half bezel
+  font-size: 60px;
+  --background: transparent;
+}

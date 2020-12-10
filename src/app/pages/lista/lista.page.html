@@ -1,0 +1,44 @@
+<ion-header class="head">
+  <ion-toolbar style="background-color: #E58117;">
+  <ion-searchbar [(ngModel)]="search" (ionChange)="searchChange()" placeholder="que animal o planta"></ion-searchbar>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-list inset>
+    <ion-item *ngFor="let item of animales">
+      <ion-item-sliding>
+        <ion-item (click)="showD(item.id)">
+          <ion-card>
+            <ion-img src="{{item.imagen[0].link}}"></ion-img>
+            <ion-item>
+              <ion-label color="danger">{{item.nombre}}</ion-label>
+              <button ion-button icon-start clear item-end>
+                <ion-icon name="add"></ion-icon>
+                Ver...
+              </button>
+            </ion-item>
+          </ion-card>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option style="font-size: 10px;" [routerLink]="['/lista', item.id]">Details</ion-item-option>
+        </ion-item-options>
+        <ion-item-options side="start">
+          <ion-item-option style="font-size: 10px;" (click)="mapClick(item.id)">MAPEOz</ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer  [translucent]="true" style="text-align: -webkit-center; ">
+  <ion-toolbar>
+    <ion-buttons  style="width:75%;     place-content: center;
+    border-bottom: solid;" >
+      <ion-button href="home" style="width:30%"><ion-icon name="home" style="zoom:1.6"></ion-icon></ion-button>
+      <ion-button href="lista" style="width:30%"><ion-icon name="search" large></ion-icon></ion-button>
+      <ion-button href="scanner" style="width:30%"><ion-icon name="scan-circle" style="zoom:1.6"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

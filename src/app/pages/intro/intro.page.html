@@ -1,0 +1,48 @@
+
+<ion-content>
+
+  <ion-slides #sliders pager>
+    <ion-slide>
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-button color="primary" (click)="next()">Siguiente</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <div class="slide">
+        <img src="assets/img/logo1.png"/>
+        <h2>BIENVENIDO</h2>
+        <p> <b>ionic conference app</b> is a practical preview of the ionic framework in action, and a demonstration of proper code use.</p>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-button color="primary" (click)="next()">Siguiente</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <img src="assets/logo/cardenal1.png"/>
+      <h2>What is Ionic?</h2>
+      <p><b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps with web technologies like HTML, CSS, and JavaScript.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-button color="primary" (click)="next()">Siguiente</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <img style="margin: 30px 0px 9px;"src="assets/logo/rana4.png"/>
+      <h2>What is Ionic Appflow?</h2>
+      <p><b>Ionic Appflow</b> is a powerful set of services and features built on top of Ionic Framework that brings a totally new level of app development agility to mobile dev teams.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/logo/zarigueya2.png"/>
+      <h2>Ready to Play?</h2>
+      <ion-button (click)="dismiss()" fill="clear">Continue <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+    </ion-slide>
+</ion-slides>
+
+</ion-content>

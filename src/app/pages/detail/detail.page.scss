@@ -1,0 +1,43 @@
+#galeria{
+    margin: 1rem auto;
+    width:100%;
+    max-width:960px;
+}
+.image-view {
+    width: 100%;
+    height: 600px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center, center;
+}
+.img-h:hover {
+    position:  -webkit-sticky;
+    width: auto;
+    max-width: auto;
+    max-height: 100%;
+    height: 600px;
+   
+}
+.colors {
+background-color: beige;
+font-size: large;
+// tipo de letra principal relaciones
+font-family: 'Gothic Black Regular', Courier, monospace;
+}
+.label-inf{
+    font-size: initial;
+    text-align: start;
+    color: black;
+}
+
+.prima-card {
+    background-color: rgba(71, 68, 68, 0.281);
+}
+.second-card {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: capitalize;
+}
+.backimg {
+    background: url(../../../assets/img/ari.jpg) no-repeat center;
+}

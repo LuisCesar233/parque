@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{animal.nombre}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backimg">
+  <div padding>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="detalle">
+        Descripcion
+      </ion-segment-button>
+      <ion-segment-button value="gallery">
+        Gallery
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="pet">
+    <ion-list *ngSwitchCase="'gallery'">
+      <div id="galeria">
+        <ion-item *ngFor="let item of animal.imagen">
+          <img src="{{item.link}}" class="img-h" alt="">
+        </ion-item>
+      </div>
+    </ion-list>
+    
+    <ion-list *ngSwitchCase="'detalle'">
+  
+      <ion-grid class="ion-on-padding">
+        <ion-row>
+          <ion-col class="ion-no-padding">
+            <ion-slides pager="true">
+              <ion-slide *ngFor="let item of animal.imagen">
+                <div *ngIf="item.id === '0'; else vidiosSlide">
+                  <img src="{{item.link}}" />
+                </div>
+                <ng-template #vidiosSlide>
+                  <video controls="controls" src="{{item.link}}" preload="none" style="width: -webkit-fill-available">
+                  </video>
+                </ng-template>
+              </ion-slide>
+            </ion-slides>
+          </ion-col>
+        </ion-row>
+        <ion-card>
+          <ion-card-content class="colors">
+            <h1 class="ion-text-center ion-text-uppercase"><label class="label-inf">COMUN: </label>{{animal.nombre}}</h1>
+            <h2 class="ion-text-center ion-text-uppercase">{{animal.nombreC}}</h2>
+            <h3 class="ion-text-center ion-text-uppercase">{{animal.tipo}}</h3>
+          </ion-card-content>
+        </ion-card>
+        <ion-col>
+          <ion-card class="prima-card">
+            <ion-card-content>
+              <ion-card class="second-card">
+                <ion-card-title class="ion-text-center">DESCRIPCION</ion-card-title>
+                <ion-card-content>{{animal.coments.descripcion}}</ion-card-content>
+              </ion-card>
+            </ion-card-content>
+            <ion-card-content>
+              <ion-card>
+                <ion-card-title>HABITOS</ion-card-title>
+                <ion-card-content>{{animal.coments.habitos}}</ion-card-content>
+              </ion-card>
+            </ion-card-content>
+            <ion-card-content>
+              <ion-card>
+                <ion-card-title>REPRODUCCION</ion-card-title>
+                <ion-card-content>{{animal.coments.reproduccion}}</ion-card-content>
+              </ion-card>
+            </ion-card-content>
+            <ion-card-content>
+              <ion-card>
+                <ion-card-title>ALIMENTACION</ion-card-title>
+                <ion-card-content>{{animal.coments.alimentacion}}</ion-card-content>
+              </ion-card>
+            </ion-card-content>
+            <ion-card-content>
+              <ion-card>
+                <ion-card-title>HABITAD</ion-card-title>
+                <ion-card-content>{{animal.coments.habitad}}</ion-card-content>
+              </ion-card>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-grid>
+      ...
+    </ion-list>
+  </div>
+   </ion-content>
